@@ -1,0 +1,70 @@
+---
+title: 'What I Learned from a Large-Scale TypeScript Migration'
+publishedAt: '2026-03-20'
+summary: 'Practical lessons from migrating a production codebase from JavaScript to TypeScript — mapping service dependencies, incremental adoption, and the real-world payoff of type safety.'
+---
+
+At SONIQ Digital, one of my first major tasks was supporting a large-scale TypeScript migration across the frontend and backend codebases. What started as "just add types" turned into a deep dive into the architecture of the entire system.
+
+## Why Migrate?
+
+The codebase had grown organically over time. JavaScript files mixed with JSX, API responses were loosely typed (or not typed at all), and bugs from mismatched data shapes were a regular occurrence. The business case was clear:
+
+- **Fewer runtime errors** from incorrect data assumptions
+- **Better developer experience** with IDE autocompletion and refactoring support
+- **Safer refactoring** as the product continued to grow
+
+## Step 1: Map the Territory
+
+Before touching any code, I spent time **reverse-engineering the existing architecture**. I analysed AWS infrastructure and service interactions, producing architecture diagrams and Confluence documentation that mapped:
+
+- Which microservices talked to each other
+- What data shapes flowed between them
+- Where the frontend consumed backend APIs
+
+This mapping exercise was valuable far beyond the migration. It clarified undocumented knowledge gaps and improved onboarding for new team members.
+
+## Step 2: Incremental Adoption
+
+We didn't flip a switch. The migration followed a file-by-file strategy:
+
+1. Rename `.js` → `.ts`, `.jsx` → `.tsx`
+2. Add explicit types to function signatures and API responses
+3. Fix the type errors that surfaced (often revealing actual bugs)
+4. Add stricter `tsconfig` rules progressively
+
+```typescript
+// Before: implicit any everywhere
+const fetchDevices = async (params) => {
+  const res = await api.get('/devices', params)
+  return res.data
+}
+
+// After: explicit contracts
+interface Device {
+  id: string
+  name: string
+  orientation: 'portrait' | 'landscape'
+  status: 'online' | 'offline'
+}
+
+const fetchDevices = async (
+  params: DeviceQueryParams
+): Promise<Device[]> => {
+  const res = await api.get<ApiResponse<Device[]>>('/devices', params)
+  return res.data.items
+}
+```
+
+## The Real Payoff
+
+The migration caught several latent bugs — places where the code assumed a field existed but the API didn't always return it, or where enum values had drifted between frontend and backend.
+
+More importantly, it shifted the team's development velocity. New features became faster to build because developers could trust the type system to catch integration mismatches early, rather than discovering them in QA or production.
+
+## Key Takeaways
+
+- **Map before you migrate.** Understanding the existing architecture is half the battle.
+- **Go incremental.** Big-bang rewrites introduce risk; file-by-file adoption lets you ship continuously.
+- **Types are documentation.** Well-typed interfaces are often better than comments because they're enforced by the compiler.
+- **Migration reveals architecture.** The process of adding types forces you to confront how data actually flows through your system.
