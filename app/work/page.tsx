@@ -81,6 +81,7 @@ const roles: Role[] = [
     bullets: [
       'Architected and delivered a production-grade lab automation system integrating real-time telemetry, firmware control, and secure user authentication, transforming a traditionally manual experimental workflow into a safe, automated and traceable research platform supporting a multi-disciplinary team of research scientists.',
       'Led full-stack development across Vue/Nuxt frontend, Node-based services, firmware interface, and SQL/InfluxDB databases, enabling remote hardware control and live monitoring in a production laboratory environment.',
+      'Refactored the frontend in Vue.js to follow a component-based architecture by identifying common UI elements and defining clear properties, which improved codebase extensibility, maintainability, and consistency, commended by a fellow software engineer.',
       'Designed a scalable firmware abstraction layer bridging UI → server → firmware → Modbus hardware, replacing rigid single hardware bindings with configuration-driven patterns to support evolving multi-column setups without major refactors.',
       'Redesigned and normalised the relational database schema to accurately model experiment lifecycles, user roles, and audit-ready comment versioning, improving data integrity, traceability, and long-term extensibility.',
       'Integrated real-time InfluxDB telemetry with dynamic ECharts visualisations and WebSocket updates via custom SVG components, enabling efficient time-range filtering and accurate experiment monitoring without page reload.',

@@ -158,7 +158,9 @@ export default function Page() {
                 system integrating real-time telemetry, firmware control, and
                 secure user authentication, transforming a manual experimental
                 workflow into a safe, automated research platform supporting a
-                multi-disciplinary team of research scientists.
+                multi-disciplinary team of research scientists. Led the technology 
+                research and development for a mobile app prototype to optimise 
+                industrial workflows and on-site monitoring.
               </p>
             </div>
           </TimelineItem>
