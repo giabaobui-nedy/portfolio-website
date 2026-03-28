@@ -68,18 +68,17 @@ export default function Page() {
 
         <p className="mb-4 text-neutral-800 dark:text-neutral-200 leading-relaxed">
           Software Engineer and Highest Achieving Graduate in Computer Science
-          with experience building production systems used in real-world
-          environments.
+          with 1+ years of professional experience building production-grade,
+          API-driven systems deployed in real operational environments.
         </p>
         <p className="mb-4 text-neutral-800 dark:text-neutral-200 leading-relaxed">
-          I work across the full system, from frontend interfaces to backend
-          services and data flow, with a focus on making complex behaviour more
-          understandable, reliable, and maintainable.
+          Strong foundation in problem-solving, system design, and debugging,
+          with hands-on experience across frontend and backend services using
+          Python, TypeScript, and modern web technologies.
         </p>
         <p className="mb-8 text-neutral-800 dark:text-neutral-200 leading-relaxed">
-          I tend to gravitate towards messy problems where requirements are still
-          evolving and thoughtful engineering can bring structure, clarity, and
-          confidence to the way a system operates.
+          Motivated by designing resilient, observable systems and strengthening
+          engineering practices in cloud-native environments.
         </p>
 
         <div className="flex flex-wrap gap-2 mb-6">
@@ -101,14 +100,13 @@ export default function Page() {
           </h2>
           <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
             <li>
-              Re-architecting the frontend codebase to centralise API call logic
-              across layers and enable stricter TypeScript typing around domain
-              models and API data structures
+              Performing comprehensive infrastructure audits and cost-analysis
+              of cloud environments, developing data-driven strategies to reduce
+              operational overhead and optimise AWS resource allocation
             </li>
             <li>
-              Investigating the current dev and staging AWS environments,
-              including infrastructure shape and cost, to identify practical
-              optimisation opportunities
+              Identifying and implementing cloud cost-optimisation deployment
+              strategies across dev/staging environments
             </li>
           </ul>
         </div>
@@ -132,13 +130,13 @@ export default function Page() {
                 SONIQ Digital · Richmond, VIC
               </p>
               <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                Working across a cloud-native digital signage platform,
-                contributing to both frontend (React/Next.js) and backend
-                services in an event-driven AWS environment. Key work includes
-                designing media transcoding pipelines for legacy CMS
-                compatibility, leading responsive redesigns across multiple
-                pages, and driving a large-scale TypeScript migration to improve
-                maintainability.
+                Contributing to frontend (React/Next.js) and backend services
+                within a production digital signage and content management
+                platform operating in a cloud-native AWS environment. Key work
+                includes designing media transcoding pipelines, leading
+                responsive redesigns, driving a large-scale TypeScript
+                migration, and performing infrastructure audits to optimise
+                cloud cost and resource allocation.
               </p>
             </div>
           </TimelineItem>
@@ -156,11 +154,11 @@ export default function Page() {
                 CSIRO · Clayton, VIC
               </p>
               <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                Architected and delivered a lab automation system connecting
-                real-time telemetry, firmware control, and secure user
-                authentication. The work turned a manual experimental process
-                into a safe, production-grade research platform used by 15-20
-                active scientists.
+                Architected and delivered a production-grade lab automation
+                system integrating real-time telemetry, firmware control, and
+                secure user authentication, transforming a manual experimental
+                workflow into a safe, automated research platform supporting a
+                multi-disciplinary team of research scientists.
               </p>
             </div>
           </TimelineItem>

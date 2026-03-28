@@ -59,7 +59,7 @@ const projects: Project[] = [
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://github.com/giabaobui-nedy/Dad-Project',
       },
     ],
   },
@@ -71,12 +71,12 @@ const projects: Project[] = [
     bullets: [
       'Designed and implemented a layered system using Clean Architecture (Ports & Adapters), separating domain logic from infrastructure to ensure testability, extensibility, and maintainability.',
       'Developed a rule-based weekly planning algorithm to schedule tasks based on priority, constraints, and user-defined working hours, supporting deterministic and scalable planning behaviour.',
-      'Implemented repository and DAO layers with ORMLite, validated through comprehensive JUnit integration and unit testing suites.',
+      'Implemented repository and DAO layers with ORMLite, and validated the system\u2019s core use cases and data mapping through comprehensive JUnit integration and unit testing suites.',
     ],
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://github.com/giabaobui-nedy/WeeklyPlanner',
       },
     ],
   },
@@ -88,12 +88,12 @@ const projects: Project[] = [
     bullets: [
       'Designed a modular, event-driven backend system with clear API boundaries to support extensibility and correctness as system requirements evolved.',
       'Collaborated with frontend and data teams to define API contracts and support end-to-end system integration.',
-      'Containerised system components using Docker and orchestrated multi-service deployments with Docker Compose.',
+      'Containerised system components using Docker and orchestrated multi-service deployments with Docker Compose to support repeatable development and testing environments.',
     ],
     links: [
       {
         label: 'Demo',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://youtu.be/Zto54hkfC2M',
       },
     ],
   },
@@ -105,16 +105,16 @@ const projects: Project[] = [
     bullets: [
       'Integrated Deep Learning models with graph search algorithms and a GUI, delivering intelligent route planning that informs users of the optimal path between two intersections and the ETA.',
       'Visualised map routing data and coordinate traversal algorithms using NetworkX, simulating real-world network topographies akin to lat/long mapping systems.',
-      'Enforced effective OOP to abstract DL model stages, creating a reusable BaseModel interface with delegated subclass implementations.',
+      'Enforced effective OOP to abstract different stages of developing a DL model, creating a reusable BaseModel interface and delegating each model\u2019s specific implementation in its subclass.',
     ],
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://github.com/giabaobui-nedy/COS30019-TBRGS',
       },
       {
         label: 'Demo',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://youtu.be/iLoNkyOPR7Y',
       },
     ],
   },
@@ -124,17 +124,17 @@ const projects: Project[] = [
     year: '2023',
     stack: ['Kotlin', 'Android Jetpack', 'Room', 'LiveData'],
     bullets: [
-      'Built an Android planner with auto-generated diary logs, enabling full CRUD operations on tasks with a clear separation of concerns via the Repository pattern with Android Room, ViewModel, and LiveData.',
-      'Achieved faster app startup and responsiveness — reduced startup timing by 7.1%, scrolling by 4.56%, and navigation by 3.52% by adding Baseline Profiles, verified using Macrobenchmark tests.',
+      'Built an Android planner with auto-generated diary logs, enabling full CRUD operations on tasks and a clear separation of concerns by applying the Repository pattern with Android Room, ViewModel, and LiveData.',
+      'Achieved faster app startup and responsiveness — reduced startup timing and frame timing by 7.1% on startup, 4.56% on scrolling, and 3.52% on navigating by adding Baseline Profiles, verified using Macrobenchmark tests.',
     ],
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://github.com/giabaobui-nedy/COS30017-HD-Mobile-Application/tree/level3-stage2',
       },
       {
         label: 'Demo',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://youtu.be/y-l_yVBvjus',
       },
     ],
   },
@@ -144,17 +144,17 @@ const projects: Project[] = [
     year: '2023',
     stack: ['Python', 'React', 'Ganache', 'MySQL', 'FastAPI'],
     bullets: [
-      'Designed a dual-database system to improve data security and integrity by classifying which data to be stored on-chain (Ganache) or off-chain (MySQL), with linked records across databases.',
-      'Integrated both databases behind a FastAPI service layer, enabling core bidding UI flows — list, bid, and settle assets — by exposing validated REST endpoints that coordinate business logic.',
+      'Designed a system with two databases aiming to improve data security and integrity by classifying which data to be stored on-chain (Ganache) or off-chain (MySQL), and how to link related records across databases.',
+      'Integrated both databases behind a FastAPI service layer, enabling core bidding UI flows — list, bid, and settle assets — by exposing validated REST endpoints that coordinate business logic on on- or off-chain data.',
     ],
     links: [
       {
         label: 'GitHub',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://github.com/giabaobui-nedy/COS30049-Innovation-Project',
       },
       {
         label: 'Demo',
-        href: 'https://github.com/giabaobui-nedy',
+        href: 'https://youtu.be/C8dyaWJs_uQ',
       },
     ],
   },
