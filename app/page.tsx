@@ -100,13 +100,17 @@ export default function Page() {
           </h2>
           <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
             <li>
-              Performing comprehensive infrastructure audits and cost-analysis
-              of cloud environments, developing data-driven strategies to reduce
-              operational overhead and optimise AWS resource allocation
+              Integrating HubSpot CRM with customer inquiry and notification
+              routing on AWS Lambda to streamline feedback workflows
             </li>
             <li>
-              Identifying and implementing cloud cost-optimisation deployment
-              strategies across dev/staging environments
+              Optimising AWS spend with event-driven scheduling (Lambda +
+              EventBridge) for non-production environments
+            </li>
+            <li>
+              Building an event-driven Shopify → microservices pipeline
+              (EventBridge + SQS) for automated CMS trial activation and
+              smoother hardware-to-software onboarding
             </li>
           </ul>
         </div>
@@ -132,11 +136,11 @@ export default function Page() {
               <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
                 Contributing to frontend (React/Next.js) and backend services
                 within a production digital signage and content management
-                platform operating in a cloud-native AWS environment. Key work
-                includes designing media transcoding pipelines, leading
-                responsive redesigns, driving a large-scale TypeScript
-                migration, and performing infrastructure audits to optimise
-                cloud cost and resource allocation.
+                platform operating in a cloud-native AWS environment. Recent
+                focus includes HubSpot-integrated inquiry routing, AWS cost
+                optimisation via scheduled non-prod shutdowns, and Shopify
+                webhook pipelines (EventBridge + SQS) for trial activation and
+                onboarding.
               </p>
             </div>
           </TimelineItem>

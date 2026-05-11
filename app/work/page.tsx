@@ -41,6 +41,9 @@ const roles: Role[] = [
       'Git/GitHub',
       'CI/CD',
       'GitHub Actions',
+      'EventBridge',
+      'SQS',
+      'HubSpot',
     ],
     bullets: [
       'Contributing to frontend (React/Next.js) and backend services (microservices-based and event-driven) within a production digital signage and content management platform operating in a cloud-native AWS environment.',
@@ -54,9 +57,12 @@ const roles: Role[] = [
       'Engineered the migration of device communication protocols to a modern cloud-native synchronisation service, improving real-time data reliability and system scalability across distributed signage displays.',
       'Implemented responsive layout support for portrait (1080×1920) and landscape (1920×1080) digital signage displays, ensuring consistent rendering across different screen orientations used in real-world deployments.',
       'Participated in debugging and resolving production issues as reported during QA, ensuring system reliability and minimal disruption to live deployments and improving UX.',
-      'Designed and implemented a scalable user inquiry service enabling automated feedback routing to support teams (Lambda → AWS SES).',
-      'Performed a comprehensive infrastructure audit and cost-analysis of cloud environments, developing data-driven strategies to reduce operational overhead and optimise AWS resource allocation.',
-      'Performed infrastructure audits to identify and implement cloud cost-optimisation deployment strategies.',
+      'Engineered a scalable user inquiry and notification routing service using AWS Lambda, integrating with HubSpot CRM to automate and streamline customer feedback workflows.',
+      'Designed and deployed an event-driven infrastructure scheduling service (AWS Lambda + EventBridge) to automatically shut down non-production environments, reducing development costs by 10–12% and staging costs by 33% through time-based optimisation.',
+      'Analysed an existing data integration architecture and proposed a simplified serverless alternative to achieve eventual consistency while reducing system complexity and infrastructure cost.',
+      'Led a TypeScript migration and architected a scalable frontend system with modular feature design, layered hooks, and strict type-safe boundaries.',
+      'Built automated validation tooling to enforce architectural constraints, reducing coupling and ensuring consistent code quality, particularly for AI-assisted development.',
+      'Currently working on an event-driven integration pipeline connecting Shopify webhooks to internal microservices (EventBridge + SQS), enabling automated CMS trial activation flows and reducing customer onboarding friction between hardware purchases and software usage.',
     ],
   },
   {
@@ -94,6 +100,7 @@ const roles: Role[] = [
       'Conducted structured evaluation of cross-platform technologies (Flutter, .NET MAUI, React Native), guiding architectural decisions based on performance, maintainability, and alignment with existing tech stacks.',
       'Applied end-to-end SDLC practices including requirements analysis, iterative prototyping, Jira-based task tracking, Git version control, formal SRS/SDD documentation, commissioning support, and knowledge transfer to ensure sustainable long-term maintenance.',
       'Collaborated closely with researchers, electronics engineers, and external vendors to align software behaviour with hardware capabilities, supporting commissioning activities, safe laboratory handover, and strengthened industry partnerships.',
+      'Produced a structured handover suite at system completion: maintained SRS/SDD documentation spanning frontend to backend, built UML architecture diagrams used to brief a mechatronics engineer with adjacent software experience as a relay for future onboarding, and co-recorded a step-by-step deployment tutorial with the team lead to ensure the system was fully reproducible end-to-end.',
       'Led technical demonstrations for internal leadership, visiting industry partners, and national intern cohorts, effectively communicating architectural decisions and the strategic value of applied software engineering within mineral processing research.',
       'Received a complimentary message from the Research Director from CSIRO. "It stimulated a great conversation at lunch about how compelling the solution is as well as the value of the great voice of customer work and how the user interfaces address the changing way people work."'
     ],
