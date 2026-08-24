@@ -100,17 +100,24 @@ export default function Page() {
           </h2>
           <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
             <li>
-              Integrating HubSpot CRM with customer inquiry and notification
-              routing on AWS Lambda to streamline feedback workflows
+              Re-architected the transactional-outbox pipeline off a managed
+              DMS → Kinesis → Lambda fan-out onto a Fargate-sidecar poller,
+              cutting non-production cloud spend by ~33% month-over-month
             </li>
             <li>
-              Optimising AWS spend with event-driven scheduling (Lambda +
-              EventBridge) for non-production environments
+              Built a production-ready frontend design-system layer —
+              semantic type/colour tokens, CVA-driven primitives, and shared
+              form components — across the React codebase
             </li>
             <li>
-              Building an event-driven Shopify → microservices pipeline
-              (EventBridge + SQS) for automated CMS trial activation and
-              smoother hardware-to-software onboarding
+              Shipped a no-payment Stripe trial activation flow and the
+              Shopify-to-CMS claim experience end to end, from billing-service
+              logic to the customer-facing claim page
+            </li>
+            <li>
+              Centralised the frontend data layer across four microservices,
+              generating types from live OpenAPI specs to collapse
+              backend-contract changes into a one-place edit
             </li>
           </ul>
         </div>
@@ -124,7 +131,7 @@ export default function Page() {
             <div className="mb-2">
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
                 <h3 className="font-medium text-neutral-900 dark:text-neutral-100">
-                  Junior Full-Stack Developer
+                  Junior Software Engineer
                 </h3>
                 <span className="text-sm text-neutral-500 dark:text-neutral-400">
                   Feb 2026 — Present
@@ -134,13 +141,13 @@ export default function Page() {
                 SONIQ Digital · Richmond, VIC
               </p>
               <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                Contributing to frontend (React/Next.js) and backend services
-                within a production digital signage and content management
-                platform operating in a cloud-native AWS environment. Recent
-                focus includes HubSpot-integrated inquiry routing, AWS cost
-                optimisation via scheduled non-prod shutdowns, and Shopify
-                webhook pipelines (EventBridge + SQS) for trial activation and
-                onboarding.
+                Contributing to frontend (React) and backend services within a
+                production digital signage and content management platform
+                (CMS) operating in a cloud-native AWS environment. Recent
+                focus includes re-architecting the transactional-outbox
+                pipeline for a ~33% non-prod cost cut, building out a
+                frontend design-system layer, and shipping the Stripe-backed
+                Shopify-to-CMS trial activation flow end to end.
               </p>
             </div>
           </TimelineItem>
