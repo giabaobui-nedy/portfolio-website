@@ -68,7 +68,7 @@ export default function Page() {
 
         <p className="mb-4 text-neutral-800 dark:text-neutral-200 leading-relaxed">
           Software Engineer and Highest Achieving Graduate in Computer Science
-          with 1+ years of professional experience building production-grade,
+          with 2+ years of professional experience building production-grade,
           API-driven systems deployed in real operational environments.
         </p>
         <p className="mb-4 text-neutral-800 dark:text-neutral-200 leading-relaxed">
