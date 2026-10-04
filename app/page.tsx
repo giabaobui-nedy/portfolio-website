@@ -36,7 +36,7 @@ function ArrowRightIcon() {
 
 const metrics = [
   { value: '~26%', label: 'total cloud cost cut by an outbox re-architecture' },
-  { value: '5×', label: 'idle Aurora load cleared with one index' },
+  { value: '2×', label: 'Aurora bill from a missing index, restored to baseline' },
   { value: '8–10 GB', label: 'enterprise account migrated in about an hour' },
   { value: '3 months', label: 'continuous production run of a CSIRO lab system' },
 ]
@@ -173,8 +173,9 @@ export default function Page() {
               as a Drive-style browser with per-directory reads
             </li>
             <li>
-              Indexed a 1.7 GB outbox table that held an Aurora Serverless
-              cluster at 5× idle capacity, rolled out across twelve databases
+              Indexed a 1.7 GB outbox table whose full-table scans had doubled
+              an Aurora Serverless bill, returning spend to baseline across
+              twelve databases
             </li>
           </ul>
         </div>
