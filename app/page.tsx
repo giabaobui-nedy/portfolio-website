@@ -111,7 +111,7 @@ export default function Page() {
         </p>
 
         <div className="flex flex-wrap gap-2 mb-8">
-          <CtaLink href="mailto:bbgiabao362003@gmail.com" primary>
+          <CtaLink href="mailto:giabaobui@baobuild.dev" primary>
             Get in touch
           </CtaLink>
           {hasCv && <CtaLink href="/cv.pdf">Download CV</CtaLink>}
