@@ -84,7 +84,7 @@ function TimelineMarker({ date, seed }: { date?: string; seed: number }) {
 
   const iconClassName = `h-auto transition-all duration-200 cursor-pointer ${
     show
-      ? 'text-neutral-800 dark:text-neutral-200 scale-[1.35]'
+      ? 'text-accent scale-[1.35]'
       : 'text-neutral-400 dark:text-neutral-500'
   }`
 

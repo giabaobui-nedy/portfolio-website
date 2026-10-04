@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import fs from 'node:fs'
+import path from 'node:path'
+import { Badge } from 'app/components/badge'
 import { BlogPostsTimeline } from 'app/components/posts'
 import { Timeline, TimelineItem } from 'app/components/timeline'
 import {
@@ -31,11 +34,37 @@ function ArrowRightIcon() {
   )
 }
 
-function Badge({ children }: { children: React.ReactNode }) {
+const metrics = [
+  { value: '~26%', label: 'total cloud cost cut by an outbox re-architecture' },
+  { value: '5×', label: 'idle Aurora load cleared with one index' },
+  { value: '8–10 GB', label: 'enterprise account migrated in about an hour' },
+  { value: '3 months', label: 'continuous production run of a CSIRO lab system' },
+]
+
+const hasCv = fs.existsSync(path.join(process.cwd(), 'public', 'cv.pdf'))
+
+function CtaLink({
+  href,
+  primary = false,
+  children,
+}: {
+  href: string
+  primary?: boolean
+  children: React.ReactNode
+}) {
+  const external = href.startsWith('http')
   return (
-    <span className="inline-flex items-center rounded-md bg-neutral-100 dark:bg-neutral-800 px-2.5 py-0.5 text-xs font-medium text-neutral-700 dark:text-neutral-300">
+    <a
+      href={href}
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      className={
+        primary
+          ? 'inline-flex items-center rounded-md bg-accent px-3.5 py-1.5 text-sm font-medium text-white dark:text-black transition-opacity hover:opacity-85'
+          : 'inline-flex items-center rounded-md border border-neutral-300 dark:border-neutral-700 px-3.5 py-1.5 text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors hover:border-accent hover:text-accent'
+      }
+    >
       {children}
-    </span>
+    </a>
   )
 }
 
@@ -76,10 +105,40 @@ export default function Page() {
           with hands-on experience across frontend and backend services using
           Python, TypeScript, and modern web technologies.
         </p>
-        <p className="mb-8 text-neutral-800 dark:text-neutral-200 leading-relaxed">
+        <p className="mb-6 text-neutral-800 dark:text-neutral-200 leading-relaxed">
           Motivated by designing resilient, observable systems and strengthening
           engineering practices in cloud-native environments.
         </p>
+
+        <div className="flex flex-wrap gap-2 mb-8">
+          <CtaLink href="mailto:bbgiabao362003@gmail.com" primary>
+            Get in touch
+          </CtaLink>
+          {hasCv && <CtaLink href="/cv.pdf">Download CV</CtaLink>}
+          <CtaLink href="https://github.com/giabaobui-nedy">GitHub</CtaLink>
+          <CtaLink href="https://linkedin.com/in/gia-bao-bui-227476227/">
+            LinkedIn
+          </CtaLink>
+        </div>
+
+        <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+          {metrics.map((metric) => (
+            <div
+              key={metric.value}
+              className="rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-black/60 p-3"
+            >
+              <dt className="sr-only">{metric.label}</dt>
+              <dd>
+                <span className="block text-xl font-semibold tracking-tight text-accent tabular-nums">
+                  {metric.value}
+                </span>
+                <span className="mt-1 block text-xs leading-snug text-neutral-600 dark:text-neutral-400 text-left">
+                  {metric.label}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
 
         <div className="flex flex-wrap gap-2 mb-6">
           <Badge>TypeScript</Badge>
@@ -101,23 +160,21 @@ export default function Page() {
           <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
             <li>
               Re-architected the transactional-outbox pipeline off a managed
-              DMS → Kinesis → Lambda fan-out onto a Fargate-sidecar poller,
-              cutting non-production cloud spend by ~33% month-over-month
+              DMS → Kinesis → Lambda fan-out onto a poller on existing Fargate
+              tasks, cutting total cloud cost by ~26% month-over-month
             </li>
             <li>
-              Built a production-ready frontend design-system layer —
-              semantic type/colour tokens, CVA-driven primitives, and shared
-              form components — across the React codebase
+              Built a TypeScript + Playwright CLI that migrates customers off a
+              legacy CMS with dry runs, verification and rollback, moving
+              8 to 10 GB enterprise accounts in about an hour each on staging
             </li>
             <li>
-              Shipped a no-payment Stripe trial activation flow and the
-              Shopify-to-CMS claim experience end to end, from billing-service
-              logic to the customer-facing claim page
+              Fixed an N+1 request pattern in the media library and rebuilt it
+              as a Drive-style browser with per-directory reads
             </li>
             <li>
-              Centralised the frontend data layer across four microservices,
-              generating types from live OpenAPI specs to collapse
-              backend-contract changes into a one-place edit
+              Indexed a 1.7 GB outbox table that held an Aurora Serverless
+              cluster at 5× idle capacity, rolled out across twelve databases
             </li>
           </ul>
         </div>
@@ -141,13 +198,12 @@ export default function Page() {
                 SONIQ Digital · Richmond, VIC
               </p>
               <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                Contributing to frontend (React) and backend services within a
-                production digital signage and content management platform
-                (CMS) operating in a cloud-native AWS environment. Recent
-                focus includes re-architecting the transactional-outbox
-                pipeline for a ~33% non-prod cost cut, building out a
-                frontend design-system layer, and shipping the Stripe-backed
-                Shopify-to-CMS trial activation flow end to end.
+                Building the React frontend and event-driven backend
+                microservices behind a live digital signage CMS, sold as a
+                SaaS product on AWS. Recent focus includes re-architecting the
+                transactional-outbox pipeline for a ~26% total cloud cost cut,
+                a legacy-CMS customer migration CLI, and a shared frontend
+                design system and data layer.
               </p>
             </div>
           </TimelineItem>
@@ -178,7 +234,7 @@ export default function Page() {
         </Timeline>
         <Link
           href="/work"
-          className="inline-flex items-center text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mt-4 mb-4"
+          className="inline-flex items-center text-sm text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors mt-4 mb-4"
         >
           View full experience
           <ArrowRightIcon />
@@ -193,7 +249,7 @@ export default function Page() {
         <div className="grid gap-4 mb-6">
           <Link
             href="/projects"
-            className="piano-card group block p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
+            className="piano-card group block p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-accent transition-colors"
           >
             <h3 className="font-medium text-neutral-900 dark:text-neutral-100 mb-1">
               Logistics Company Platform
@@ -211,7 +267,7 @@ export default function Page() {
           </Link>
           <Link
             href="/projects"
-            className="piano-card group block p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
+            className="piano-card group block p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-accent transition-colors"
           >
             <h3 className="font-medium text-neutral-900 dark:text-neutral-100 mb-1">
               Battery Manufacturing Digital Twin
@@ -229,25 +285,27 @@ export default function Page() {
           </Link>
           <Link
             href="/projects"
-            className="piano-card group block p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
+            className="piano-card group block p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-accent transition-colors"
           >
             <h3 className="font-medium text-neutral-900 dark:text-neutral-100 mb-1">
-              Traffic-based Route Guidance System
+              Automated CV Tailoring Pipeline
             </h3>
             <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-              Deep learning integrated with graph search algorithms for intelligent
-              route planning with real-time traffic visualisation.
+              Spec-driven pipeline that turns YAML job-ad specs and a bullet
+              bank into tailored PDF CVs, with LLM agent skills that cannot
+              overclaim.
             </p>
             <div className="flex flex-wrap gap-1.5">
               <Badge>Python</Badge>
-              <Badge>TensorFlow</Badge>
-              <Badge>NetworkX</Badge>
+              <Badge>LaTeX</Badge>
+              <Badge>YAML</Badge>
+              <Badge>AI Agents</Badge>
             </div>
           </Link>
         </div>
         <Link
           href="/projects"
-          className="inline-flex items-center text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mb-4"
+          className="inline-flex items-center text-sm text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors mb-4"
         >
           View all projects
           <ArrowRightIcon />
